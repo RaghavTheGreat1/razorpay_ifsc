@@ -35,7 +35,6 @@ import 'package:razorpay_ifsc/razorpay_ifsc.dart';
 
 ## Usage
 
-to `/example` folder.
 
 ```dart
 final ifscRazorpay = IfscRazorpay();
