@@ -3,7 +3,7 @@ import 'package:razorpay_ifsc/razorpay_ifsc.dart';
 
 void main() {
   test('Razorpay IFSC Test', () async {
-    final ifscRazorpay = IfscRazorpay();
+    final ifscRazorpay = RazorpayIfsc();
 
     final bankDetails = await ifscRazorpay.getBankDetails("KKBK0008077");
 

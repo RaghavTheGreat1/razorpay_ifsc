@@ -4,10 +4,10 @@ import 'package:http/http.dart' as http;
 import 'package:razorpay_ifsc/src/exceptions/razorpay_ifsc_exceptions.dart';
 import 'package:razorpay_ifsc/src/models/bank_details.dart';
 
-class IfscRazorpay {
+class RazorpayIfsc {
   late http.Client client;
 
-  IfscRazorpay() {
+  RazorpayIfsc() {
     client = http.Client();
   }
   Future<BankDetails> getBankDetails(String ifscCode) async {
