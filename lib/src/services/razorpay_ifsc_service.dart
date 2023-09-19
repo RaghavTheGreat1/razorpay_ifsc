@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:ifsc_razorpay/src/exceptions/ifsc_razorpay_exceptions.dart';
-import 'package:ifsc_razorpay/src/models/ifsc_details.dart';
+import 'package:razorpay_ifsc/src/exceptions/razorpay_ifsc_exceptions.dart';
+import 'package:razorpay_ifsc/src/models/bank_details.dart';
 
 class IfscRazorpay {
   late http.Client client;
@@ -10,16 +10,16 @@ class IfscRazorpay {
   IfscRazorpay() {
     client = http.Client();
   }
-  Future<IfscDetails> getBankDetails(String ifscCode) async {
+  Future<BankDetails> getBankDetails(String ifscCode) async {
+    ifscCode = ifscCode.toUpperCase();
     final uri = Uri.parse('https://ifsc.razorpay.com/$ifscCode');
 
     final res = await client.get(uri);
     if (res.statusCode == 200) {
       final json = jsonDecode(res.body);
-
-      return IfscDetails.fromJson(json);
+      return BankDetails.fromJson(json);
     } else {
-      throw IfscRazorpayException(
+      throw RazorpayIfscException(
         res.body,
       );
     }

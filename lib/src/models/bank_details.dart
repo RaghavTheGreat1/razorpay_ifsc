@@ -1,5 +1,5 @@
-final class IfscDetails {
-  IfscDetails({
+final class BankDetails {
+  BankDetails({
     required this.bank,
     required this.bankcode,
     required this.branch,
@@ -31,14 +31,14 @@ final class IfscDetails {
   final String micr;
   final bool rtgs;
   final bool neft;
-  final String swift;
+  final String? swift;
   final String iso3166;
   final String bank;
   final String bankcode;
   final String ifsc;
 
-  factory IfscDetails.fromJson(Map<String, dynamic> json) {
-    return IfscDetails(
+  factory BankDetails.fromJson(Map<String, dynamic> json) {
+    return BankDetails(
       branch: json['BRANCH'],
       centre: json['CENTRE'],
       district: json['DISTRICT'],
@@ -64,7 +64,7 @@ final class IfscDetails {
     return 'IfscDetails(branch: $branch, centre: $centre, district: $district, state: $state, address: $address, contact: $contact, imps: $imps, city: $city, upi: $upi, micr: $micr, rtgs: $rtgs, neft: $neft, swift: $swift, iso3166: $iso3166, bank: $bank, bankcode: $bankcode, ifsc: $ifsc)';
   }
 
-  IfscDetails copyWith({
+  BankDetails copyWith({
     String? branch,
     String? centre,
     String? district,
@@ -83,7 +83,7 @@ final class IfscDetails {
     String? bankcode,
     String? ifsc,
   }) {
-    return IfscDetails(
+    return BankDetails(
       branch: branch ?? this.branch,
       centre: centre ?? this.centre,
       district: district ?? this.district,
@@ -105,7 +105,7 @@ final class IfscDetails {
   }
 
   @override
-  bool operator ==(covariant IfscDetails other) {
+  bool operator ==(covariant BankDetails other) {
     if (identical(this, other)) return true;
 
     return other.branch == branch &&

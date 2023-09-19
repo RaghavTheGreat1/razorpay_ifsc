@@ -1,7 +1,7 @@
-name: ifsc_razorpay
-description: IFSC Razorpay 
+name: razorpay_ifsc
+description: Razorpay IFSC Toolkit
 version: 1.0.0
-homepage: https://github.com/RaghavTheGreat1/ifsc_razorpay.git
+homepage: https://github.com/RaghavTheGreat1/razorpay_ifsc.git
 
 environment:
   sdk: '>=3.2.0-42.2.beta <4.0.0'
