@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
 import 'package:razorpay_ifsc/razorpay_ifsc.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('Razorpay IFSC Test', () async {
